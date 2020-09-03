@@ -1,0 +1,46 @@
+#!/bin/sh
+
+syntax="./notemark [format] [file_path] not respected"
+format1="-html"
+format2="-pdf"
+format3="-png"
+format4="-jpg"
+
+if [ "$#" -ne 2 ]; then
+	>&2 tput setaf 1; echo $syntax
+	exit
+fi	
+
+if [ ! -f $2 ]; then
+	>&2 tput setaf 1; echo "File doesn't exist"
+	exit
+fi
+
+if  [ $1 != $format1 ]  &&  [ $1 != $format2 ] &&  [ $1 != $format3 ] &&  [ $1 != $format4 ]; then
+	>&2 tput setaf 1; echo "[supported_format] : -html, -pdf, -png or -jpg"
+	exit
+fi
+
+
+#clean
+rm -rf src/interpreter/analysis/ src/interpreter/lexer/ src/interpreter/node/ src/interpreter/parser/
+rm -rf out/interpreter/*
+
+# generate source files from grammar
+sablecc -d src grammar/interpreter.sablecc > /dev/null
+
+# compile java source files
+javac -cp "lib/*:src" -d out src/interpreter/Main.java > /dev/null
+
+# copy .dat files to out directory
+cp src/interpreter/lexer/lexer.dat out/interpreter/lexer > /dev/null
+cp src/interpreter/parser/parser.dat out/interpreter/parser > /dev/null
+
+# run
+java -cp "lib/*:out" interpreter.Main $1 $2 > /dev/null
+>&2 tput setaf 1; echo "[=========================File successfully generated=========================]
+                            🍺 Powered by Sablecc 🍺
+[=============================================================================]"
+
+
+

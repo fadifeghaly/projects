@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.quizwhiz">
+
+    <uses-feature
+        android:name="android.hardware.sensor.gyroscope"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".BrainBox"></activity>
+        <activity android:name=".Puzzle" />
+        <activity android:name=".SimonSays" />
+        <activity android:name=".GamesLobby" />
+        <activity android:name=".MatchingCards" />
+        <activity android:name=".AccessibilityFeatures" />
+        <activity android:name=".TimePerQuiz" />
+        <activity android:name=".AnswersLogger" />
+        <activity android:name=".NewResident" />
+        <activity android:name=".WelcomePage" />
+        <activity android:name=".HelperAuthentication" />
+        <activity android:name=".ScoreEvolution" />
+        <activity android:name=".ScoreBoard" />
+        <activity android:name=".QuizSample" />
+        <activity android:name=".ResidentHomePage" />
+        <activity android:name=".HelpersHomePage" />
+        <activity
+            android:name=".IntroAnimation"
+            android:label="QuizWhiz">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

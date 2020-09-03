@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/quizbg"
+    android:orientation="vertical"
+    tools:context=".QuizSample">
+
+    <RelativeLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/questionCounter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Question : 1/3"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_toEndOf="@+id/questionCounter"
+            android:text="Score : 0"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/tts"
+            android:layout_width="60dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="180dp"
+            android:layout_toEndOf="@+id/score"
+            android:background="@drawable/tts"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:onClick="decreaseTextSize"
+            android:visibility="invisible"/>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </FrameLayout>
+    <GridLayout
+        android:id="@+id/GridLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:columnCount="2"
+        android:orientation="horizontal"
+        android:rowCount="1"
+        android:useDefaultMargins="true">
+
+        <Button
+            android:id="@+id/decreaseFont"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="left|bottom"
+            android:background="@drawable/fontdown"
+            android:onClick="decreaseTextSize"
+            tools:ignore="RtlHardcoded" />
+
+        <Button
+            android:id="@+id/increaseFont"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="right|bottom"
+            android:background="@drawable/fontup"
+            android:onClick="increaseTextSize"
+            tools:ignore="RtlHardcoded" />
+
+    </GridLayout>
+
+</LinearLayout>

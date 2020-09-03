@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="bgColor">#425263</color>
+    <color name="bonjourbg">#D6E1C1</color>
+    <color name="user2bg">#A39DCF</color>
+    <color name="rProfil">#32A7E4</color>
+    <color name="gProfil">#B3C1C0</color>
+    <color name="qbutton">#3C4872</color>
+    <color name="lprofil">#BBEC9D</color>
+    <color name="lbutton">#2600C3</color>
+</resources>

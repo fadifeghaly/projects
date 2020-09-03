@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/hbg"
+    android:orientation="vertical"
+    tools:context=".HelpersHomePage">
+
+    <TextView
+        android:id="@+id/questionCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tableau de bord"
+        android:background="@drawable/roundshape1"
+        android:backgroundTint="@color/design_default_color_primary"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingEnd="20dp"
+        android:paddingStart="20dp"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textSize="40sp" />
+
+    <RelativeLayout
+
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ImageView
+            android:id="@+id/bg"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:src="@drawable/laurie" />
+
+        <Button
+            android:id="@+id/scoresBtn"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="135dp"
+            android:background="@drawable/roundshape1"
+            android:backgroundTint="@color/bgColor"
+            android:onClick="viewAllScores"
+            android:text="Voir le score de tous les résidents"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:drawableLeft="@drawable/scoreicon"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/evolutionBtn"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/scoresBtn"
+            android:layout_alignStart="@+id/scoresBtn"
+            android:layout_alignEnd="@+id/scoresBtn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/roundshape1"
+            android:backgroundTint="@color/bgColor"
+            android:onClick="viewScoreById"
+            android:text="Voir l'évolution d'un(e) résident(e)"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:drawableLeft="@drawable/chart"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/reponses"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/evolutionBtn"
+            android:layout_alignStart="@+id/evolutionBtn"
+            android:layout_alignEnd="@+id/evolutionBtn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="-3dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="3dp"
+            android:background="@drawable/roundshape1"
+            android:backgroundTint="@color/bgColor"
+            android:onClick="answersLogger"
+            android:text="Voir le taux de réussite/échec d'un(e) résident(e)"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:drawableLeft="@drawable/percentage"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/timer"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reponses"
+            android:layout_alignStart="@+id/evolutionBtn"
+            android:layout_alignEnd="@+id/evolutionBtn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="-3dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="3dp"
+            android:background="@drawable/roundshape1"
+            android:backgroundTint="@color/bgColor"
+            android:onClick="durationLogger"
+            android:text="Voir la durée moyenne par quiz"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:drawableLeft="@drawable/timer"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/adaptation"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/timer"
+            android:layout_alignStart="@+id/evolutionBtn"
+            android:layout_alignEnd="@+id/evolutionBtn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="-3dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="3dp"
+            android:background="@drawable/roundshape1"
+            android:backgroundTint="@color/bgColor"
+            android:onClick="accessibilityPicker"
+            android:text="Activer ou désactiver une \nadaptation"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:drawableLeft="@drawable/activate"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/inscription"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/adaptation"
+            android:layout_alignStart="@+id/evolutionBtn"
+            android:layout_alignEnd="@+id/evolutionBtn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="-3dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="3dp"
+            android:background="@drawable/roundshape1"
+            android:backgroundTint="@color/bgColor"
+            android:onClick="subscribreResident"
+            android:text="Inscrire un(e) résident(e)"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:drawableLeft="@drawable/adduser"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

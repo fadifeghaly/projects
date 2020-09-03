@@ -1,0 +1,114 @@
+.menu ul {
+	margin: 0 auto;
+	padding: 35px 0;
+}
+
+.menu a {
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: white;
+	font-size: 25px;
+}
+
+.menu ul li {
+	display: inline-block;
+	text-align: center;
+	margin-left: 16%;
+}
+
+#logo {
+	float: left;
+}
+
+#social {
+	position: absolute;
+	top: 150px;
+	left: 25px
+}
+
+#chef {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+#au_menu {
+	display: block;
+	margin-left: auto;
+	margin-right: 170px;
+	width: 50%;
+}
+
+.choix {
+	position: absolute;
+	color: white;
+	font-size: 15px;
+	top: 180px;
+	left: 150px;
+	width: 900px;
+}
+
+#menu_semaine {
+	position: absolute;
+	top: 55px;
+	right: 350px;
+}
+
+.liste_1 {
+	position: absolute;
+	color: white;
+	font-size: 20px;
+	top: 200px;
+	left: 100px;
+	width: 900px;
+}
+
+#info {
+	position: absolute;
+	top: 170px;
+	right: 500px;
+}
+
+.courriel {
+	position: absolute;
+	color: white;
+	font-size: 20px;
+	top: 200px;
+	left: 100px;
+	width: 900px;
+}
+
+#retour {
+	position: absolute;
+	text-decoration: none;
+	text-transform: uppercase;
+	left: 430px;
+	top: 880px;
+}
+
+#retour1 {
+	position: absolute;
+	text-transform: uppercase;
+	left: 60px;
+	top: 880px;
+}
+
+a:link {
+	color: white;
+}
+
+#retour1 a {
+	text-decoration: none;
+}
+
+body {
+	position: relative;
+	min-width: 1920px;
+	margin: 0 auto;
+	max-height: 1080px;
+	font-family: 'Abel', sans-serif;
+}
+
+

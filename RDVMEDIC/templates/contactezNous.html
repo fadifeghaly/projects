@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+{% block head %}
+<title>RDV-MEDIC | Contactez-nous</title>
+<style>
+	body, html {background-image: url('../static/images/cbg.png');}
+</style>
+{% endblock %}
+{% block body %}
+<div class="contact_us">
+	<div>
+		<form class="formulaire_contact" action="/envoie_msg" method="POST" id="form">
+			<h1>Contactez-nous!</h1>
+			<label for="prenom"><b>Prénom</b></label><br>
+			<input type="text" name="prenom" required="" 
+				oninvalid="this.setCustomValidity('Champ requis')" oninput="setCustomValidity('')"><br>
+			<label for="nomFamille"><b><br>Nom de famille</b></label><br>
+			<input type="text" name="nomFamille" required="" 
+				oninvalid="this.setCustomValidity('Champ requis')" oninput="setCustomValidity('')"><br><br>
+			<label for="courriel"><b>Adresse courriel</b></label><br>
+			<input type="text" name="courriel" required="" 
+				oninvalid="this.setCustomValidity('Champ requis')" oninput="setCustomValidity('')"><br>
+			<label for="commentaire"><b><br>Message</b></label><br>
+			<textarea rows="3" cols="25" name="commentaire" form="form">commentaire...</textarea>
+			<br>
+			<button type="submit" id="send_msg">Envoyer</button>
+		</form>
+	</div>
+</div>
+<div id="retour">
+	<br><br><a href="/"><img src="../static/images/backw.png" alt="pic" width="40" height="40"></a>
+</div>
+{% endblock %}

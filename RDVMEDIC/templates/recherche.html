@@ -1,0 +1,54 @@
+{% extends 'base.html'%}
+{% block head %}
+<title>RDV-MEDIC | Cliniques</title>
+<script src="{{url_for('static', filename='js/script.js')}}"></script>
+{% endblock %}
+{% block body %}
+<br><br>
+<h1 style="text-align: center;">Résultat(s) de votre recherche</h1>
+{% for clinique in cliniques %}
+<div class="listeCliniques">
+	<table id="cliniques" class="table table-striped table-dark">
+		<tr>
+			<th>Nom de la clinique</th>
+			<th>Adresse</th>
+			<th>Numéro de téléphone</th>
+			<th>État du service</th>
+			{% if pc %}
+			<th>Distance de votre résidence 📌</th>
+			{% endif %}
+		</tr>
+		<tr>
+			<td>{{clinique[1]}}</td>
+			<td>{{clinique[2]}}</td>
+			<td>{{clinique[5]}}</td>
+			<td>{{clinique[6]}}</td>
+			{% if pc %}
+			<td id="{{clinique[4]}}">
+</div>
+{% endif %}
+</tr>
+{% if pc %}
+<script>getCoordinates('{{clinique[4]}}', "{{pc}}", "{{clinique[4]}}");</script>
+{% endif %}
+</table>
+{% if clinique[6] != "Fermée temporairement" and pc %}
+<form action="/prendre_rdv/{{clinique[1]}}">
+	<input type="submit" id="reserver" value="Prendre un rdv" />
+	<a href="javascript:;"><img id="{{clinique[4]}}" onclick='paintMap("{{clinique[4]}}");' src="static/images/location.png" alt="location" width="6%" height="6%"></a><br>
+</form>
+{% endif %}
+<div id="map{{clinique[4]}}" style="width:500px; height:380px; display: none; border: 2px solid #888;
+	margin-top: 2%;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 25px;"></div>
+<button type="button" id="btn{{clinique[4]}}" style="display: none;  margin-left: 43%; margin-top: 1%;
+	background-color: #272E36" onclick='hideMap("{{clinique[4]}}");'>Fermer</button>
+</div>
+{% endfor %}
+<div id="retour">
+	<br><br><a href="/"><img src="../static/images/back.png" alt="pic" width="40" height="40"></a>
+</div>
+<br>
+{% endblock %}

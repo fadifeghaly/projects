@@ -1,0 +1,83 @@
+{% extends 'base.html'%}
+{% block head %}
+<title>RDV-MEDIC | Cliniques</title>
+<style>
+	body, html {background-image: url('../static/images/profilbg.png');}
+</style>
+{% endblock %}
+{% block body %}
+<h1 id="greeting" style="text-align: center;">Bonjour {{infos[1]}} {{infos[2]}}!<br><br></h1>
+<div class="profil">
+	<h2>Mes informations</h2>
+</div>
+<div class="card-container" style="width: 40%; margin: auto;">
+	Nom : {{infos[1]}} {{infos[2]}}<br>
+	Téléphone : {{infos[3]}}<br>
+	Adresse Courriel : {{infos[4]}}<br><br>
+	<a id="modifier" href="/modifier_profil">✏️ Modifier mes informations</a>
+	<a id="supprimer" href="/supprimer_compte">⚠️ Supprimer mon compte</a>
+</div>
+
+<div class="rdv_confirmation">
+	<br>
+	{% if alert %}
+	<h2 class="alert"><br>{{alert}}</h2>
+	{% endif %}
+	{% if next_rdv %}
+	<h2>Mes prochains rendez-vous</h2>
+	<!-- Future RDV -->
+	{% for e in next_rdv|reverse %}
+	<div class="card-container">
+		<div id="clinique_infos">
+			<h4>{{e[4]}}</h4>
+		</div>
+		<br>
+		<div id="adresse_clinique">Adresse : {{e[6]}}</div>
+		<div id="tel_clinique">Téléphone : {{e[5]}}</div>
+		<div id="date_rdv">Date du rdv : {{e[7]}}</div>
+		<div id="hr_rdv">Heure du rdv : {{e[8]}}h</div>
+		<div id="dr">Médecin: {{e[10]}}</div>
+		<div id="num_conf">Numéro de confirmation : {{e[9]}}</div>
+		<br>
+		
+		<div class="options_container">
+			<div><a id="conf_courriel" title="Confirmation par courriel" href="/confirmation_courriel/{{e[0]}}">✉️ </a></div>
+			<div><a id="conf_sms" title="Confirmation par sms" href="/confirmation_sms/{{e[0]}}">📱 </a></div>
+			<div>
+				<form action="/annuler_rdv/{{e[9]}}" method = "POST">
+					<input type="image" title="Annuler le rdv" src="../static/images/dot.png" id="annuler_rdv" style="width: 48px;"/>
+				</form>
+			</div>
+		</div>
+		
+	</div>
+	{% endfor %}
+	{% endif %}
+
+	{% if last_rdv %}
+	<h2>Mes derniers rendez-vous</h2>
+	<!-- RDV passé -->
+	{% for e in last_rdv|reverse %}
+	<div class="card-container">
+		<div id="clinique_infos">
+			<h4>{{e[4]}}</h4>
+		</div>
+		<br>
+		<div id="adresse_clinique">Adresse : {{e[6]}}</div>
+		<div id="tel_clinique">Téléphone : {{e[5]}}</div>
+		<div id="date_rdv">Date du rdv : {{e[7]}}</div>
+		<div id="hr_rdv">Heure du rdv : {{e[8]}}h</div>
+		<div id="dr">Médecin: {{e[10]}}</div>
+		<div id="num_conf">Numéro de confirmation : {{e[9]}}</div>
+		<br>
+		
+	</div>
+	{% endfor %}
+	{% endif %}
+	
+</div>
+
+<div id="retour">
+	<br><a href="/"><img src="../static/images/back.png" alt="pic" width="40" height="40"></a>
+</div><br>
+{% endblock %}

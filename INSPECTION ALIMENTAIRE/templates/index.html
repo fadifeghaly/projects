@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+{% block head %}
+<title>Inspection alimentaire MTL | Accueil</title>
+<script src="{{url_for('static', filename='js/script.js')}}"></script>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+	<img src="static/images/2.jpg" alt="pic" width="700" height="400">
+	<div><br>
+		<p><span style="font-size: 26px;">Je suis l'inspecteur Garry, je suis spécialisé dans l'inspection des établissements alimentaires :</span><br><br>
+		restaurants | supermarchés | traiteurs | abattoirs | usines de transformation | fermes laitières</p>
+		<a href="/dashboard"><br>
+			<img src="../static/images/start.png" alt="start" width="300" height="125">
+		</a> 
+	</div>
+</div>
+{% endblock %}

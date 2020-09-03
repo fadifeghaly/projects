@@ -1,0 +1,331 @@
+body,
+html {
+	background: url("../images/background.png") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-family: 'Acme', sans-serif;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+.navbar {
+	float: left;
+}
+
+.main_container,
+.modifierProfil {
+	text-align: center;
+}
+
+.upper_container {
+	max-width: 100%;
+	grid-auto-columns: 1fr 1fr 1fr;
+	text-align: center;
+	font-size: 1.25vw;
+}
+
+.inner_container {
+	max-width: 30%;
+	margin-left: 90%;
+	margin-top: 20px;
+	text-align: center;
+}
+
+.lower_container {
+	padding-top: 2%;
+	max-width: 100%;
+	text-align: center;
+	font-size: 1.4vw;
+}
+
+.search_container {
+	max-width: 100%;
+	padding-top: 5%;
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+
+.contact_us {
+	max-width: 50%;
+	margin: 0 auto;
+}
+
+#center_image {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#connexion {
+	display: none;
+}
+
+#signin_btn {
+	width: 100%;
+	text-align: center;
+}
+
+#register_btn {
+	width: 100%;
+	text-align: center;
+}
+
+#form_rdv {
+	margin: 0 auto !important;
+	display: block;
+	padding-bottom: 5%;
+}
+
+#confirmation_input {
+	width: 28% !important;
+}
+
+input {
+	width: 220px;
+}
+
+.rdv_confirmation,
+.profil,
+.modifierProfil {
+	margin-top: 10%;
+	max-width: 40%;
+	margin: 0 auto;
+}
+
+.formulaire_connexion,
+.formulaire_inscription {
+	box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 4px 6px rgba(0, 0, 0, 0.45);
+	position: absolute;
+	padding: 15px;
+	background-color: white;
+	top: 1%;
+	transform: translate(50%, 0%);
+	border: 2px solid #888;
+	border-radius: 15px;
+	width: 50%;
+}
+
+#inscription {
+	display: none;
+}
+
+.formulaire_contact {
+	box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 4px 6px rgba(0, 0, 0, 0.45);
+	font-family: 'Cabin Sketch', cursive;
+	padding: 20px;
+	padding-right: 5%;
+	background-color: white;
+	border: 2px solid #888;
+	border-radius: 30px;
+	display: block;
+	margin-top: 5%;
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+}
+
+.listeCliniques {
+	margin-top: 5%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+th {
+	background-color: #32A7E5;
+	color: white;
+}
+
+th,
+td {
+	width: 150px;
+	text-align: center;
+	border: 1px solid black;
+	padding: 5px;
+	border-collapse: collapse;
+}
+
+#cancel_signin,
+#cancel_register {
+	width: auto;
+	padding: 10px 20px;
+	background-color: red;
+}
+
+#erreur {
+	padding-top: 5%;
+}
+
+#erreur,
+#retour,
+.signup {
+	text-align: center;
+}
+
+#send_msg {
+	background-color: #272E36;
+}
+
+#greeting {
+	padding-top: 1%;
+}
+
+#reserver,
+#annuler_rdv,
+#modifier,
+#supprimer,
+#modifier_profil,
+#conf_courriel,
+#conf_sms {
+	background-color: #EE2661 !important;
+}
+
+.booking {
+	margin-top: 3%;
+}
+
+button,
+#reserver,
+#modifier,
+#supprimer,
+#modifier_profil {
+	background-color: #32A7E5;
+	box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 4px 6px rgba(0, 0, 0, 0.45);
+	color: white;
+	padding: 10px 20px;
+	margin: 5px 0;
+	border: none;
+	cursor: pointer;
+	border-radius: 25px;
+}
+
+#annuler_rdv,#conf_courriel,
+#conf_sms {
+	background-color: #32A7E5;
+	box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 4px 6px rgba(0, 0, 0, 0.45);
+	color: white;
+	padding: 7px 14px;
+	margin: -6px 0;
+	border: none;
+	cursor: pointer;
+	border-radius: 25px;
+}
+
+.desktop-footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	color: white;
+	font-size: 11px;
+	text-align: center;
+}
+
+.nom-site {
+	margin: 10px auto 0 auto;
+	max-width: 700px;
+	color: gray;
+}
+
+#listDoctors{
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#carouselExampleFade {
+	width: 53%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.confirmation_rdv{
+	text-align: center;
+	color: #00008B;
+	width: 1500px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 77vh;
+}
+
+#reserver,
+#modifier,
+#supprimer,
+#conf_sms,
+#conf_courriel,
+#annuler_rdv {
+	transition: all .2s linear;
+}
+
+#modifier:hover,
+#supprimer:hover,
+#conf_sms:hover,
+#conf_courriel:hover,
+#annuler_rdv:hover,
+#signin_btn:hover,
+#register_btn:hover,
+#cancel_signin:hover,
+#cancel_register:hover {
+	box-shadow: 2px 8px 45px rgba(0, 0, 0, .15);
+}
+
+#reserver:hover,
+.card-container:hover,
+.formulaire_contact:hover {
+	box-shadow: 2px 8px 45px rgba(0, 0, 0, .15);
+	transform: translate3D(0, -2px, 0);
+}
+
+.card-container {
+	color: black;
+	background-color: #2A95DF;
+	padding: 15px 20px 20px 20px;
+	margin: 15px 0;
+	border-radius: 15px;
+	color: white;
+}
+
+.options_container {
+	display: grid;
+	grid-template-columns:15% 15% 15%;
+}
+
+#annuler_rdv {
+	height: 34px;
+}
+
+.alert {
+	text-align: center;
+	color: white;
+	border: 2px solid #888;
+	border-radius: 15px;
+	max-width: 60%;
+	font-size: 1.25vw;
+	background-color: green;
+	padding-bottom: 45px;
+	margin: auto;
+
+}
+
+#goback {
+	width: 40px;
+	height: 40px;
+}
+
+.unavailable_dates a {
+	background-color : #DD2125 !important;
+	background-image : none !important;
+	color: White !important;
+}
+
+.available_dates a {
+	background-color : #45DA77 !important;
+	background-image : none !important;
+	color: White !important;
+}

@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+{% block head %}
+<title>RDV-MEDIC | {{nom_clinique}}}</title>
+<script src="{{url_for('static', filename='js/script.js')}}"></script>
+{% endblock %}
+{% block body %}
+<br><br>
+<div class="confirmation_rdv" style="width:800px; margin:0 auto;">
+<h2>Merci d'avoir choisi {{nom_clinique}}</h2>
+<h3>Votre rendez-vous avec Dr.{{doctor}} à {{hour}}h le {{date}} est bien confirmé.<br>Vous pouvez retrouver votre rendez-vous dans <a href="/profil">votre profil</a>.</h3>
+</div>
+
+<div id="retour">
+	<br><br><a href="/"><img src="/static/images/back.png" alt="pic" width="40" height="40"></a>
+</div>
+<br>
+{% endblock %}

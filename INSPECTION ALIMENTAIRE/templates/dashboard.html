@@ -1,0 +1,79 @@
+{% extends 'base.html'%}
+{% block head %}
+<title>Inspection alimentaire MTL | Tableau de bord</title>
+<script src="{{url_for('static', filename='js/script.js')}}"></script>
+<style>
+	select { width: 10.5em }
+</style>
+{% endblock %}
+
+{% block body %}
+<form name="top" action="/recherche" method = "POST">
+	<div class="grid-container">
+		<input type="text" placeholder=" Nom d'établissement, propriétaire ou rue" id = "search" name="search" required="" 
+		oninvalid="this.setCustomValidity('Champs requis')" oninput="setCustomValidity('')">
+		<div id="motCle">
+			<input type="image" src="../static/images/search.png" alt="search" width="65" height="45">
+		</div>	
+	</div>
+</form>
+<div class="grid-container">
+<div style="text-align: left;">
+	<img src="../static/images/garry.png" alt="garry" width="300" height="200">
+</div>
+<div style="text-align: right;">
+	<img src="../static/images/garry2.png" alt="garry2" width="300" height="300">
+</div>
+</div>
+<div class="grid-container">
+	<div id="box1" style="border: 1px solid black;">
+		<div id="formulaire1">
+			<div>
+				Recherche par date :<br>
+				<input type="text" placeholder=" 📅   aaaa-mm-jj" id="date1"><br>
+				<input type="text" placeholder=" 📅   aaaa-mm-jj" id="date2"><br>
+				<div class="grid-container3">
+					<div></div>
+					<div><button id="send" onclick="return validerDate();">Recherche</button></div>
+					<a href="/dashboard">
+						<img src="../static/images/refresh.png" alt="refresh" width="35" height="35">
+					</a> 
+				</div>
+			</div>
+			<span style="color: white;" id="erreurDate"></span>
+		</div>
+	</div>
+	<div id="box2" style="border: 1px solid black;">
+		<div id="formulaire2">
+			<div>
+				Recherche par nom d'établissement :<br><br>
+				<select id="listeEtablissements">
+					{% for task in tasks %}
+					<option value={{loop.index}}>{{task.etablissement.replace("''", "'")}}</option>
+					{% endfor %}
+				</select>
+				<br><br><br>
+				<div class="grid-container3">
+					<div></div>
+					<div><button id="send2">Recherche</button></div>
+					<a href="/dashboard">
+						<img src="../static/images/refresh.png" alt="refresh" width="35" height="35">
+					</a> 
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="grid-container1">
+<div></div>
+	<a href="#ajaxCall" style="text-align: center;">
+		<img id="arrow1" style="visibility: hidden;" src="../static/images/down.png" alt="down" width="200" height="200" >
+	</a>
+</div>
+<div class="content">
+	<table id="ajaxCall" style="visibility: hidden;" class="table table-striped table-dark"></table>
+	<a href="#top">
+		<img id="arrow" style="visibility: hidden;" src="../static/images/top.png" alt="up" width="200" height="200" >
+	</a>
+</div>	
+{% endblock %}

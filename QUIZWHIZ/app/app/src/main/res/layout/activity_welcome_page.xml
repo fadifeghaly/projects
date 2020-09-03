@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fp"
+    android:orientation="vertical"
+    tools:context=".WelcomePage">
+
+    <Button
+        android:id="@+id/helper"
+        android:layout_width="95dp"
+        android:layout_height="35dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/roundshape1"
+        android:backgroundTint="#2784C7"
+        android:gravity="center"
+        android:onClick="helperHome"
+        android:text="Admin"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/welcome"
+        android:layout_width="600dp"
+        android:layout_height="400dp"
+        android:layout_gravity="center"
+        android:src="@drawable/bonjour" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"></androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

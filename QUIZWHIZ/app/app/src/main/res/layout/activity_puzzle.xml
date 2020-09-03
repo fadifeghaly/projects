@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/puzzlebg"
+    android:orientation="vertical"
+    tools:context=".Puzzle">
+
+    <GridLayout
+        android:id="@+id/fstGrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:columnCount="2"
+        android:orientation="horizontal"
+        android:rowCount="1"
+        android:useDefaultMargins="true">
+
+    <ImageView
+        android:id="@+id/preview"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_gravity="left"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="95dp"
+            android:text="Complétez le \ncasse-tête"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp"
+            tools:ignore="RtlCompat" />
+    </GridLayout>
+
+    <Spinner
+        android:id="@+id/choice"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown" />
+
+    <GridLayout
+        android:id="@+id/puzzleGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:columnCount="5"
+        android:orientation="horizontal"
+        android:rowCount="5"
+        android:horizontalSpacing="0dip"
+        android:verticalSpacing="0dip">
+    </GridLayout>
+
+</LinearLayout>

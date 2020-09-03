@@ -1,0 +1,78 @@
+#follow {
+	text-align: right;
+}
+
+html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+body {
+	font-family: 'Abel', sans-serif;
+	color: #202020;
+	height: 100%;
+	background-image: url('../image/bg.jpg');
+	min-width: 350px;
+}
+
+h1, h2 {
+	text-align: center;
+}
+
+.site-wrapper {
+	display: grid;
+}
+
+.bloc1 {
+	display: grid;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-top: 2%;
+	border-radius: 150px;
+	grid-template-columns: 1fr 1fr;
+	justify-content: space-around;
+}
+
+.descriptif {
+	font-size: 20px;
+	padding-left: 5%;
+	padding-top: 25%;
+}
+
+#down {
+	text-align: center;
+}
+
+#choix {
+	text-align: center;
+}
+
+#isometric {
+	padding-top: 10%;
+	padding-left: 10%;
+}
+
+.liste-criteres {
+	padding: 10px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.liste-criteres * {
+	margin: auto;
+}
+
+.search {
+	text-align: center;
+}
+
+#contactus {
+	margin-top: 25px;
+	text-align: center;
+}
+
+#contact {
+	text-decoration: none;
+	color: black;
+}

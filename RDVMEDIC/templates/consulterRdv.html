@@ -1,0 +1,71 @@
+{% extends 'base.html'%}
+{% block head %}
+<title>RDV-MEDIC | Consulter un rendez-vous</title>
+<style>
+	body, html {background-image: url('../static/images/rdvbg.png');}
+</style>
+<script src="{{url_for('static', filename='js/script.js')}}"></script>
+{% endblock %}
+{% block body %}
+<div class="main_container">
+	<div id="calendar_logo">
+		<img src="../static/images/calendar.png" alt="back" width="12%" height="12%"><br>
+	</div>
+	<form id="form_rdv" class="form-inline md-form mr-auto mb-4" action="/details_rdv" method = "POST">
+		<input id="confirmation_input"  placeholder="Numéro de confirmation" class="form-control mr-sm-2" type="search" name="search" 
+			aria-label="Search" required="" oninvalid="this.setCustomValidity('Champ requis')" oninput="setCustomValidity('')">
+		<button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">Recherche</button>
+	</form>
+	{% if alert %}
+	<h2 class="alert"><br>{{alert}}</h2>
+	{% endif %}
+	{% if rdv %}
+	<div class="rdv_confirmation">
+		<div class="card-container" style="text-align: left; background-color: #3898AD;">
+			<div id="clinique_infos">
+				<h4>{{rdv[4]}}</h4>
+			</div>
+			<div id="tel_clinique">Téléphone : {{rdv[5]}}</div>
+			<div id="adresse_clinique">Adresse : {{rdv[6]}}</div>
+			<br>
+			<div id="nom">Nom du patient(e) : {{rdv[1]}} {{rdv[2]}}</div>
+			<div id="medecin">Médecin : {{rdv[10]}}</div>
+			<div id="date_rdv">Date du rdv : {{rdv[7]}}</div>
+			<div id="hr_rdv">Heure du rdv : {{rdv[8]}}h</div>
+			<form style="text-align: center;" action="/cancel_rdv/{{rdv[9]}}" method = "POST">
+				<input type="search" name="rm_rdv" value="{{confirmation}}" style="visibility: hidden;"><br>
+				{% if cancel == "OK" %}
+				<input type="submit" id="annuler_rdv" value="Annuler ce rendez-vous" />
+				{% endif %}
+			</form>
+		</div>
+		<br>
+	</div>
+	{% endif %}	
+	{% if msg %}
+	<div id="connexion_requise">
+		<H2><br>{{msg}}</H2>
+	</div>
+	{% if msg == 'Connectez-vous afin de réaliser cette action' %}
+	<button id="redirect_signin">Connexion</button>
+	{% endif %}	
+	{% endif %}	
+	<div id="connexion" class="authentification">
+		<div class="formulaire_connexion">
+			<h1>Identifiez-vous</h1>
+			<label for="adresse"><b>Adresse courriel</b></label><br>
+			<input id="c_courriel" type="text" name="courriel" required="" 
+				oninvalid="this.setCustomValidity('Champ requis')" oninput="setCustomValidity('')"><br>
+			<label for="mdp"><b><br>Mot de passe</b></label><br>
+			<input id="c_pass" type="password" name="mdp" required="" 
+				oninvalid="this.setCustomValidity('Champ requis')" oninput="setCustomValidity('')"><br><br>
+			<button type="submit" id="signin_btn" onclick="authentification();">Connexion</button><br>
+			<button type="button" id="cancel_signin" onclick="fermerConnexion();">Annuler</button>
+			<br><a href="/">Vous n'avez pas de compte ?</a>
+		</div>
+	</div>
+	<div id="retour">
+		<br><br><a href="/"><img src="../static/images/back.png" alt="pic" width="40" height="40"></a>
+	</div>
+</div>
+{% endblock %}

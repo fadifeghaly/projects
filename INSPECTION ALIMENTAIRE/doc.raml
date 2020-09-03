@@ -1,0 +1,80 @@
+#%RAML 1.0
+title: INF5190 - 
+mediaType: application/json
+types:
+  ExistingOffender:
+    properties:
+      proprietaire:
+        type: string
+        required: true
+      categorie:
+        type: string
+        required: true
+      etablissement:
+        type: string
+        required: true
+      adresse:
+        type: string
+        required: true
+      ville:
+        type: string
+        required: true
+      description:
+        type: string
+        required: true
+      date_infraction:
+        type: string
+        required: true
+      date_jugement:
+        type: string
+        required: true
+      montant:
+        type: string
+        required: true
+  Infraction:
+    properties:
+      etablissement:
+        type: string
+        required: true
+      Nombre_de_contraventions:
+        type: number
+        required: true      
+/api:
+  /contrevenants?du={param1}?au={param2}:
+    get:
+      description: Obtenir la liste des contrevenants ayant commis une infraction entre deux dates spécifiées en paramètre
+      queryParameters:
+        param1:
+          description: La date de début
+          type:        integer
+          required:    true
+          example:     2018-01-01
+        param2:
+          description: La date de fin
+          type:        integer
+          required:    true
+          example:     2020-01-01 
+      responses:
+        200:
+          body:
+            application/json:
+              type: ExistingOffender[]
+        404:
+          description: Le format des dates est invalide
+
+  /infractions/{format}:
+      get:
+        description: Extraire les infractions en format json, xml ou csv, le format json sera affiché dans le fureteur, les formats xml et csv seront sauvegardés à la racine du projet
+        queryParameters:
+          format:
+            description: Spécifier le format 
+            type:        String
+            required:    true
+            example:     json
+        responses:
+          200:
+            body:
+              application/json:
+                type: Infraction[]
+          404:
+            description: Le format est invalide.

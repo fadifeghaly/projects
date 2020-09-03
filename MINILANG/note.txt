@@ -1,0 +1,72 @@
+[title]
+    ~H1(~title(COVID19 CANADA))
+
+[author]
+    ~author(Fadi Feghali)
+    ~author(Josue Torres)
+
+[date]
+    ~date(2020/04/12)
+
+[paragraph]
+    ~bold(Coronaviruses are a large family of viruses. Some cause illness in people and others cause illness in animals. 
+    Human coronaviruses are common and are typically associated with mild illnesses, similar to the common cold.)
+
+[list]
+  - COVID 19 is the disease caused by the new coronavirus that emerged in China in December 2019.
+  - COVID 19 symptoms include cough, fever, shortness of breath, muscle aches, sore throat.  
+  - The new coronavirus can be spread from person to person. It is diagnosed with a laboratory test.
+  - There is no coronavirus vaccine yet. 
+  
+[image]
+    ~image('https://i.ibb.co/94JkzqF/symptoms.png')
+
+[paragraph]
+  ~bold(Proper handwashing not only reduces the spread of Coronavirus, 
+  it can prevent the spread of other viral illnesses such as cold and flu. 
+  Handwashing also reduces the risk of getting other easily spread infections, such SARS.) 
+
+[image]
+  ~image('https://i.ibb.co/VL838gK/WH.png')  
+
+[paragraph]
+  ~bold(Social distancing, also called physical distancing, means keeping space between yourself and other people outside of your home. 
+  To practice social or physical distancing.)
+  
+[list]
+  - Stay at least 6 feet from other people.
+  - Do not gather in groups.
+  - Stay out of crowded places and avoid mass gatherings.
+  
+[image]
+    ~image('https://i.ibb.co/Qjj5WYn/SD.png')
+
+[paragraph]
+    ~bold(Number of confirmed cases by region)
+
+[table]
+    ~row(~header(Regions)       ~header(Number of confirmed cases))
+
+    ~row(~data(Montreal)        ~data(14 599))
+    ~row(~data(Laval)           ~data(3 355))
+    ~row(~data(Laurentides)     ~data(2 347))
+    ~row(~data(Estri)           ~data(854))
+    ~row(~data(Outaouais)       ~data(293))
+    ~row(~data(Nunavik)         ~data(16))
+
+[paragraph]
+    ~bold(You are invited to visit this page regularly to obtain the latest statistics about COVID 19.)
+    [link]
+      ~link(https://www.worldometers.info/coronavirus/country/canada/)    
+    
+[image]
+    ~image('https://i.ibb.co/5GDy6pt/statistics.png')
+
+[bold]
+     ~italic(If you have any question about this project, please feel free to contact us.)
+
+[image]
+     ~image('https://i.ibb.co/cgz2WGG/contact.png')
+
+[email]
+     ~email(fadi.feghaly@gmail.com)

@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+{% block head %}
+<title>RDV-MEDIC | Modifier mes informations</title>
+<style>
+	body, html {background-image: url('../static/images/profilbg.png');}
+</style>
+{% endblock %}
+{% block body %}
+<br><br>
+<div class="modifierProfil">
+	<h2>Modifier les informations de votre compte</h2>
+	<form action="/confirmer_modification" method = "POST">
+		Téléphone<br><input type="search" name="tel"><br><br>
+		Adresse courriel<br><input type="search" name="courriel"><br><br>
+		<input type="submit" id="modifier_profil" value="Sauvegarder la modification">
+	</form>
+</div>
+<div id="retour">
+	<br><br><a href="/profil"><img src="../static/images/back.png" alt="pic" width="40" height="40"></a>
+</div><br>
+{% endblock %}

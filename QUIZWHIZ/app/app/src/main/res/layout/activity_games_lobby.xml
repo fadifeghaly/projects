@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/lobbybg"
+    android:orientation="vertical"
+    tools:context=".GamesLobby">
+
+
+    <GridLayout
+        android:id="@+id/GridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:columnCount="3"
+        android:orientation="horizontal"
+        android:rowCount="2"
+        android:useDefaultMargins="true">
+
+        <Button
+            android:id="@+id/matchcards"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="80dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:background="@drawable/matchcards" />
+
+        <Button
+            android:id="@+id/simon"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="80dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:background="@drawable/simon" />
+
+
+        <Button
+            android:id="@+id/puzzle"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="80dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:background="@drawable/puzzle" />
+
+        <Button
+            android:id="@+id/brainbox"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:background="@drawable/brainbox" />
+
+    </GridLayout>
+
+</LinearLayout>

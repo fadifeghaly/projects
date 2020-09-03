@@ -1,0 +1,85 @@
+Package interpreter;
+
+Helpers
+    tab           = 9;
+    lf            = 10;
+    cr            = 13;
+    space         = 32;
+    blank         = (tab | lf | cr | space);
+    tilde         = '~';
+    l_brk         = '[';
+    r_brk         = ']';
+    letter        = (['a'..'z'] | ['A'..'Z']);
+    digit         = ['0'..'9'];
+    nonblank      = [33..125];
+    notpars       = [nonblank - ['(' + ')']];
+    notdash       = [notpars  - ['[' + ']']];
+    char_sequence = [notdash - '-'];
+
+Tokens
+    l_par = '(';
+    r_par = ')';
+    l_brk = '[';
+    r_brk = ']';
+    dash  = '-';
+    tilde = '~';
+
+    author = 'author';
+    title  = 'title';
+    date   = 'date';
+    image  = 'image';
+    link   = 'link';
+    bold   = 'bold';
+    italic = 'italic';
+    email  = 'email';
+    para   = 'paragraph';
+    list   = 'list';
+    table  = 'table';
+    font_size = 'H1';
+    tr     = 'row';
+    td     = 'data';
+    th     = 'header';
+
+    blank = blank+;
+    plain_text = (char_sequence | blank)+;
+
+Ignored Tokens
+    blank;
+
+Productions
+    document = [blocks]:block*;
+
+    block = {author}    l_brk author    r_brk [inlines]:inline+
+          | {title}     l_brk title     r_brk [inlines]:inline+
+          | {date}      l_brk date      r_brk [inlines]:inline+
+          | {font_size} l_brk font_size r_brk [inlines]:inline+
+          | {bold}      l_brk bold      r_brk [inlines]:inline+
+          | {italic}    l_brk italic    r_brk [inlines]:inline+
+          | {image}     l_brk image     r_brk [inlines]:inline+
+          | {link}      l_brk link      r_brk [inlines]:inline+
+          | {email}     l_brk email     r_brk [inlines]:inline+
+          | {para}      l_brk para      r_brk [inlines]:inline+
+          | {list}      l_brk list      r_brk [items]:list_item+
+          | {table}     l_brk table     r_brk [items]:table_row+;
+
+    list_item = dash [inlines]:inline;
+
+    table_row = tilde tr l_par [items]:table_item+ r_par;
+
+    table_item =
+            {td} tilde td terminal
+          | {th} tilde th terminal;
+
+    inline = {terminal} terminal
+           | {author} tilde author terminal
+           | {title}  tilde title  terminal
+           | {date}   tilde date   terminal
+           | {email}  tilde email  terminal
+           | {image}  tilde image  terminal
+           | {link}   tilde link   terminal
+           | {bold}   tilde bold   terminal
+           | {italic} tilde italic terminal
+           | {font_size} tilde font_size terminal;
+
+    terminal = {plain_text}   plain_text
+             | {inline} l_par inline r_par;

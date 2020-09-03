@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+
+{% block head %}
+<title>Inspection alimentaire MTL | Recherche</title>
+{% endblock %}
+
+{% block body %}
+<br><br>
+<h1 style="text-align: center;">Résultat(s) de votre recherche</h1>
+<br><br>
+<div class="content">
+	<table class="table table-striped table-dark">
+		<tr>
+			<th>&nbsp;Propriétaire&nbsp;</th>
+			<th>&nbsp;Catégorie&nbsp;</th>
+			<th>&nbsp;Établissement&nbsp;</th>
+			<th>&nbsp;Adresse&nbsp;</th>
+			<th>&nbsp;Ville&nbsp;</th>
+			<th>&nbsp;Description&nbsp;</th>
+			<th>&nbsp;Date infraction&nbsp;</th>
+			<th>&nbsp;Date jugement&nbsp;</th>
+			<th>&nbsp;Montant&nbsp;</th>
+		</tr>
+	{% for task in tasks %}
+	<tr>
+		<td>{{task.proprietaire.replace("''", "'")}}</td>
+		<td>{{task.categorie.replace("''", "'")}}</td>
+		<td>{{task.etablissement.replace("''", "'")}}</td>
+		<td>{{task.adresse.replace("''", "'")}}</td>
+		<td>{{task.ville.replace("''", "'")}}</td>
+		<td><br>{{task.description.replace("''", "'")}}<br><br></td>
+		<td>{{task.date_infraction}}</td>
+		<td>{{task.date_jugement}}</td>
+		<td>{{task.montant}}</td>
+	</tr>
+	{% endfor %}
+</table><br><br>
+<a href="/dashboard">
+	<img src="../static/images/home.png" alt="pic" width="300" height="125"><br><br>
+</a>
+</div>
+{% endblock %}

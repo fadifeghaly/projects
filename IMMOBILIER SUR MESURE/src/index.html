@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>Immobilier sur mesure</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link href="./style/style.css" rel="stylesheet">
+		<link href="./style/gmaps.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="site-wrapper">
+			<main>
+				<div id="intro">
+					<div id="follow">
+						<img src="image/follow.png" width="120" height="45">
+					</div>
+					<h1>Immobilier sur mesure</h1>
+					<h2>Votre référence habitat</h2>
+				</div>
+				<div class="bloc1">
+					<div id="isometric">
+						<img src="image/intro.png" width="650" height="450">
+					</div>
+					<div class="descriptif">
+						<p>Le projet consiste à produire un score de propriété qui permettra à un consommateur de classer un bâtiment, <br>
+							que ce soit dans le but d'acheter ou de louer selon divers critères.<br>
+							La plateforme permettra aux utilisateurs de cibler le marché immobilier de l'île de Montréal.
+						</p>
+					</div>
+				</div>
+				<div id="down">
+					<a href="#form"><img alt="demarrez" height="40" src="image/icons/down.png" width="40"></a>
+				</div>
+				<br><br>	
+				<form action="./criteres.php" id="form" method="POST">
+					<div id="choix">
+						<h4><br><br>Cochez vos critères de recherche et indiquez le degré d'importance sur une échelle de 1 à 10<br>(10 étant la valeur la plus élevée)</h4>
+					</div>
+					<br><br><br>
+					<!-- Liste criteres-->
+					<div class="liste-criteres">
+						<div>
+							<img alt="crime" height="40" src="image/icons/skull.png" width="40">
+							<br><input id="crimes" name="criteres[]" type="checkbox" value="crimes_p">
+							<label for="crimes">&nbsp;Criminalité</label>
+							<div class="slidecontainer1"><br>
+								&nbsp;&nbsp;&nbsp;<input class="slider1" id="crimeRange" max="10" min="1" name="slider1" type="range" value="0">
+								<span id="res1"></span>
+							</div>
+						</div>
+						<div>
+							<img alt="ecoles" height="40" src="image/icons/teacher.png" width="40">
+							<br><input id="ecoles" name="criteres[]" type="checkbox" value="ecoles">
+							<label for="ecoles">&nbsp;Écoles primaires</label>
+							<div class="slidecontainer2"><br>
+								&nbsp;&nbsp;&nbsp;<input class="slider2" id="ecolesRange" max="10" min="1" name="slider2" type="range" value="0">
+								<span id="res2"></span>
+							</div>
+						</div>
+						<div>
+							<img alt="stationsMetro" height="40" src="image/icons/metro.png" width="40">
+							<br><input id="stationsMetro" name="criteres[]" type="checkbox" value="stations_metro_p">
+							<label for="stationsMetro">&nbsp;Stations de métro</label>
+							<div class="slidecontainer3"><br>
+								&nbsp;&nbsp;&nbsp;<input class="slider3" id="stationRange" max="10" min="1" name="slider3" type="range" value="0">
+								<span id="res3"></span>
+							</div>
+						</div>
+						<div>
+							<img alt="punaises" height="40" src="image/icons/punaises_p.png" width="40">
+							<br><input id="punaises" name="criteres[]" type="checkbox" value="punaises_p">
+							<label for="punaises">&nbsp;Punaises de lit</label>
+							<div class="slidecontainer4"><br>
+								&nbsp;&nbsp;&nbsp;<input class="slider4" id="punaisesRange" max="10" min="1" name="slider4" type="range" value="0">
+								<span id="res4"></span>
+							</div>
+						</div>
+						<div>
+							<img src="image/icons/Restaurant.png" alt="Restaurant" width="40" height="40">
+							<br><input type="checkbox" id="Restaurant" name="criteres[]" value="Restaurant">
+							<label for="Restaurant">&nbsp;Restaurants</label>
+							<div class="slidecontainer5"><br>
+								&nbsp;&nbsp;&nbsp;<input name="slider5" type="range" min="1" max="10" value="0" class="slider5" id="RestaurantRange">
+								<span id="res5"></span>
+							</div>
+						</div>
+						<div>
+							<img src="image/icons/Café.png" alt="Café" width="40" height="40">
+							<br><input type="checkbox" id="Café" name="criteres[]" value="Café">
+							<label for="Café">&nbsp;Cafés</label>
+							<div class="slidecontainer6"><br>
+								&nbsp;&nbsp;&nbsp;<input name="slider6" type="range" min="1" max="10" value="0" class="slider6" id="CafeRange">
+								<span id="res6"></span>
+							</div>
+						</div>
+						<div>
+							<br>
+							<img alt="pharmacies" height="40" src="image/icons/Pharmacie.png" width="40">
+							<br><input id="Pharmacie" name="criteres[]" type="checkbox" value="Pharmacies">
+							<label for="Pharmacie">&nbsp;Pharmacies</label>
+							<div class="slidecontainer7"><br>
+								&nbsp;&nbsp;&nbsp;<input class="slider7" id="pharmacieRange" max="10" min="1" name="slider7" type="range" value="0">
+								<span id="res7"></span>
+							</div>
+						</div>
+						<div>
+							<img src="image/icons/Épicerie.png" alt="Épicerie" width="40" height="40">
+							<br><input type="checkbox" id="Épicerie" name="criteres[]" value="Épicerie">
+							<label for="Épicerie">&nbsp;Épiceries</label>
+							<div class="slidecontainer8"><br>
+								&nbsp;&nbsp;&nbsp;<input name="slider8" type="range" min="1" max="10" value="0" class="slider8" id="EpicerieRange">
+								<span id="res8"></span>
+							</div>
+						</div>
+						<div>
+							<img src="image/icons/jardins.png" alt="Lavoir" width="40" height="40">
+							<br><input type="checkbox" id="Buanderie" name="criteres[]" value="Lavoir">
+							<label for="Buanderie">&nbsp;Buanderies</label>
+							<div class="slidecontainer9"><br>
+								&nbsp;&nbsp;&nbsp;<input name="slider9" type="range" min="1" max="10" value="0" class="slider9" id="LavoirRange">
+								<span id="res9"></span>
+							</div>
+						</div>
+						<div>
+							<div>
+								<img src="image/icons/bar.png" alt="Bar" width="40" height="40">
+								<br><input type="checkbox" id="Bar" name="criteres[]" value="Bar">
+								<label for="Bar">&nbsp;Bars</label>
+								<div class="slidecontainer10"><br>
+									&nbsp;&nbsp;&nbsp;<input name="slider10" type="range" min="1" max="10" value="0" class="slider10" id="BarRange">
+									<span id="res10"></span>
+								</div>
+							</div>
+						</div>
+						<div>
+							<br>
+							<img alt="bixi" height="40" src="image/icons/Bixi.png" width="40">
+							<br><input id="Bixi" name="criteres[]" type="checkbox" value="stations_bixi_p">
+							<label for="Bixi">&nbsp;Stations Bixi</label>
+							<div class="slidecontainer11"><br>
+								<input class="slider11" id="bixiRange" max="10" min="1" name="slider11" type="range" value="0">
+								<span id="res11"></span>
+							</div>
+						</div>
+						<div>
+							<br>
+							<img alt="corn" height="40" src="image/icons/corn.png" width="40">
+							<br><input id="Jardins" name="criteres[]" type="checkbox" value="jardins_communautaires_p">
+							<label for="jardins">&nbsp;Jardins<br>communautaires</label>
+							<div class="slidecontainer12"><br>
+								&nbsp;&nbsp;&nbsp;<input class="slider12" id="jardinsRange" max="10" min="1" name="slider12" type="range" value="0">
+								<span id="res12"></span>
+							</div>
+						</div>
+						<br><br>
+					</div>
+					<div class="search">
+						<input class="search-bar" id="adresse" name="adresse" placeholder="Adresse ou code postal..." type="text" size="50">
+						<button class="submit" onClick="return verifierFormulaire()" type="submit">Soumettre</button>
+						<input class="lat" name="lat" type="hidden">
+						<input class="lng" name="lng" type="hidden">
+					</div>
+					<a id="contact" href="contactez-nous.html">
+						<div id="contactus">
+							<img alt="contact" src="image/contactez-nous.png" width="50" height="50">
+							<p>Contactez-nous</p>
+						</div>
+					</a>
+					<!-- Fin liste criteres-->
+				</form>
+				<br><br><br><br>
+				<div id="map" hidden="hidden"></div>
+			</main>
+		</div>
+		<script src="script/script.js"></script>
+		<script src="script/slider.js"></script>
+		<script src="script/gmaps.js"></script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxWQ047Z8v33YY5Sxfulv-1GcbjjRVsa8&libraries=places&callback=initMap"></script>
+	</body>
+</html>
