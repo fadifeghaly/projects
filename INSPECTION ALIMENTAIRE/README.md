@@ -58,12 +58,3 @@ C1 | Complétée | <http://localhost:5000/api/infractions/json> |
 C2 | Complétée | <http://localhost:5000/api/infractions/xml> |
 C3 | Complétée | <http://localhost:5000/api/infractions/csv> |
 F1 | Complétée | <https://fegf07069109-projet-session.herokuapp.com> |
-
-## Informations : Twitter + gmail
-
-| Compte | Adresse | Mot de passe |
-| ------ | ------ | ------ |
-✉️ Gmail | Envoi : projet.session.INF5190@gmail.com | 🔑 projet2020 |
-🐦 Twitter + ✉️ Gmail | Réception : test.contrevenants@gmail.com | 🔑 projet2020 |
-🐦 Twitter | test.contrevenants@gmail.com | 🔑 projet2020 |
-
