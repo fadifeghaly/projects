@@ -15,12 +15,5 @@
 
 ❗**L'application est diponible sur [heroku](http://gti350-tp1.herokuapp.com)**
 
-**Sources utilisée :** 
-
-- [Forum de discussion](https://stackoverflow.com)
-- [images + icones](https://www.pngguru.com)
-
-
-
 ![Sample](img/sample.png)
 
